@@ -18,11 +18,6 @@ $fixed-width: 70vw;
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #fff;
 }
 
 /* Encabezados */
@@ -68,21 +63,6 @@ p {
   padding-bottom: 20px;
 }
 
-a {
-  color: #060a24;
-  text-decoration: none;
-
-  &:hover {
-    color: #00f3bb;
-    text-decoration: line-through;
-  }
-
-  &:active {
-    color: rgba(6, 10, 36, 0.56);
-    text-decoration: line-through;
-  }
-}
-
 /* Elementos */
 
 button {
@@ -97,19 +77,12 @@ nav {
   text-transform: uppercase;
 }
 
-iframe {
-  border: none;
-  width: 100%;
-}
-
-/* PIE */
-
 footer {
   font-family: $fuente-encabezado;
 
   i {
     color: #060a24;
-    padding-left: 25px;
+    padding-left: 30px;
     font-size: 18px;
   }
 }
@@ -121,7 +94,7 @@ footer {
 }
 
 #toggle-mobile-menu:checked ~ ul.mobile-menu {
-  @include flex-centrado(column);
+  display: block;
 }
 
 /* Menú desktop */
@@ -131,6 +104,13 @@ nav ul {
   list-style-type: none;
   padding: 0;
 }
+
+/*
+.desktop-menu li {
+  display: inline-block;
+  margin-left: 45px;
+}
+*/
 
 .blue {
   color: #0000ec;
@@ -142,11 +122,6 @@ button {
   border: none;
   width: 225px;
   height: 55px;
-
-  &:hover {
-    background-image: linear-gradient(to left, #00f0b8, #0000ff);
-    color: #fff;
-  }
 }
 
 #sec-episodios {
@@ -157,7 +132,6 @@ button {
 
 #sec-dedondevenimos {
   @include flex-centrado(column);
-  height: 70vh;
 
   .container {
     align-items: flex-start;
@@ -167,7 +141,7 @@ button {
 
       img {
         width: 75%;
-        transform: translateY(-170px);
+        transform: translateY(-150px);
       }
     }
   }
@@ -175,17 +149,17 @@ button {
 
 #sec-invitados {
   @include flex-centrado(row);
-}
+  margin-bottom: 50px;
 
-.wrap-galeria {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 25px 0 50px 0;
+  .wrap-section {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
 
-  img {
-    width: 33.33%;
+    img {
+      width: 33.33%;
+    }
   }
 }
 
@@ -203,7 +177,6 @@ button {
     .wrap-icons {
       display: flex;
       justify-content: space-around;
-      margin: 0 auto;
       width: 60vw;
       margin: 30px 0;
 
@@ -222,7 +195,7 @@ button {
 #sec-ultimasnovedades {
   position: relative;
   background-image: linear-gradient(#0000ff, #0000a3);
-  padding: 250px 0 150px 0;
+  padding: 200px 0;
   @include flex-centrado(column);
 
   h2 {
@@ -251,6 +224,7 @@ svg.top-angle {
   top: 0;
   width: 100%;
   height: 10vw;
+  /* set height to pixels if you want angle to change with screen width */
 }
 
 svg.down-angle {
@@ -258,11 +232,12 @@ svg.down-angle {
   bottom: 0;
   width: 100%;
   height: 10vw;
+  /* set height to pixels if you want angle to change with screen width */
 }
 
 /* Mobile Nav */
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 480px) {
   body {
     padding: 0;
   }
@@ -307,30 +282,23 @@ svg.down-angle {
     flex-flow: row wrap;
     text-align: center;
     justify-content: center;
-
-    a {
-      color: #fff;
-    }
   }
 
+  nav,
   section {
     padding: 15px;
   }
 
-  nav {
-    padding-top: 15px;
+  nav .logo {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-start;
+  }
 
-    .logo {
-      flex-basis: 47%;
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    label {
-      flex-basis: 47%;
-      display: flex;
-      justify-content: flex-end;
-    }
+  nav label {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
   }
 
   iframe {
@@ -339,32 +307,19 @@ svg.down-angle {
 
   ul.mobile-menu {
     padding-top: 25px;
-    width: 100%;
   }
 
-  ul.mobile-menu li {
-    background-color: #0000ec;
-    color: #fff;
-    width: 100%;
-    padding: 15px 0 15px 30px;
-    text-align: left;
-  }
+  #sec-dedondevenimos .container {
+    figure img {
+      transform: translateY(-75px);
+    }
 
-  #sec-dedondevenimos {
-    height: auto;
-
-    .container {
-      figure img {
-        transform: translateY(-75px);
-      }
-
-      div {
-        margin-top: -50px;
-      }
+    article {
+      margin-top: -50px;
     }
   }
 
-  .wrap-galeria {
+  #sec-invitados .wrap-section {
     flex-direction: column;
 
     img {
@@ -374,62 +329,18 @@ svg.down-angle {
 
   #sec-temas .container .wrap-icons {
     flex-direction: column;
-    width: auto;
 
     figure {
       padding: 0 0 45px 0;
-      margin: 0 auto;
     }
-  }
-
-  #sec-ultimasnovedades {
-    padding: 70px 15px 45px 15px;
-  }
-
-  footer {
-    flex-direction: column;
-
-    div:first-of-type {
-      margin-bottom: 30px;
-    }
-
-    #redessociales {
-      display: inline-flex;
-      justify-content: space-around;
-      width: 100%;
-
-      i {
-        padding: 0;
-      }
-    }
-  }
-}
-
-/* Tablet */
-
-@media all and (min-width: 764px) and (max-width: 1365px) {
-  #sec-episodios {
-    padding: 150px 0;
-  }
-
-  #sec-ultimasnovedades {
-    padding: 120px 15px 45px 15px;
-  }
-
-  #sec-dedondevenimos .container figure img {
-    transform: translateY(-30px);
   }
 }
 
 /* Desktop */
 
-@media all and (min-width: 1024px) {
-  #toggle-mobile-menu:checked ~ ul.mobile-menu {
-    flex-direction: row;
-  }
-
+@media all and (min-width: 480px) {
   .mobile-menu {
-    @include flex-centrado(row);
+    display: block;
     padding-top: 0;
 
     li {
@@ -508,11 +419,5 @@ svg.down-angle {
 
   button {
     margin-top: 50px;
-  }
-
-  #sec-dedondevenimos {
-    div {
-      padding-top: 10%;
-    }
   }
 }

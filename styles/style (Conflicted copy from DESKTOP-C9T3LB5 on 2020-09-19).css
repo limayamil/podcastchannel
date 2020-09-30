@@ -4,11 +4,6 @@
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #fff;
 }
 
 /* Encabezados */
@@ -52,21 +47,6 @@ p {
   padding-bottom: 20px;
 }
 
-a {
-  color: #060a24;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #00f3bb;
-  text-decoration: line-through;
-}
-
-a:active {
-  color: rgba(6, 10, 36, 0.56);
-  text-decoration: line-through;
-}
-
 /* Elementos */
 button {
   font-family: "IBM Plex Mono", monospace;
@@ -84,19 +64,13 @@ nav {
   text-transform: uppercase;
 }
 
-iframe {
-  border: none;
-  width: 100%;
-}
-
-/* PIE */
 footer {
   font-family: "IBM Plex Mono", monospace;
 }
 
 footer i {
   color: #060a24;
-  padding-left: 25px;
+  padding-left: 30px;
   font-size: 18px;
 }
 
@@ -106,19 +80,7 @@ footer i {
 }
 
 #toggle-mobile-menu:checked ~ ul.mobile-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: block;
 }
 
 /* Menú desktop */
@@ -128,6 +90,12 @@ nav ul {
   padding: 0;
 }
 
+/*
+.desktop-menu li {
+  display: inline-block;
+  margin-left: 45px;
+}
+*/
 .blue {
   color: #0000ec;
 }
@@ -138,12 +106,6 @@ button {
   border: none;
   width: 225px;
   height: 55px;
-}
-
-button:hover {
-  background-image: -webkit-gradient(linear, right top, left top, from(#00f0b8), to(#0000ff));
-  background-image: linear-gradient(to left, #00f0b8, #0000ff);
-  color: #fff;
 }
 
 #sec-episodios {
@@ -167,7 +129,6 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 70vh;
 }
 
 #sec-dedondevenimos .container {
@@ -194,8 +155,8 @@ button:hover {
 
 #sec-dedondevenimos .container figure img {
   width: 75%;
-  -webkit-transform: translateY(-170px);
-          transform: translateY(-170px);
+  -webkit-transform: translateY(-150px);
+          transform: translateY(-150px);
 }
 
 #sec-invitados {
@@ -212,9 +173,10 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin-bottom: 50px;
 }
 
-.wrap-galeria {
+#sec-invitados .wrap-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,10 +187,9 @@ button:hover {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 25px 0 50px 0;
 }
 
-.wrap-galeria img {
+#sec-invitados .wrap-section img {
   width: 33.33%;
 }
 
@@ -269,7 +230,6 @@ button:hover {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 0 auto;
   width: 60vw;
   margin: 30px 0;
 }
@@ -301,7 +261,7 @@ button:hover {
   position: relative;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#0000ff), to(#0000a3));
   background-image: linear-gradient(#0000ff, #0000a3);
-  padding: 250px 0 150px 0;
+  padding: 200px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -368,6 +328,7 @@ svg.top-angle {
   top: 0;
   width: 100%;
   height: 10vw;
+  /* set height to pixels if you want angle to change with screen width */
 }
 
 svg.down-angle {
@@ -375,10 +336,11 @@ svg.down-angle {
   bottom: 0;
   width: 100%;
   height: 10vw;
+  /* set height to pixels if you want angle to change with screen width */
 }
 
 /* Mobile Nav */
-@media all and (max-width: 1024px) {
+@media all and (max-width: 480px) {
   body {
     padding: 0;
   }
@@ -420,18 +382,13 @@ svg.down-angle {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  nav a {
-    color: #fff;
-  }
+  nav,
   section {
     padding: 15px;
   }
-  nav {
-    padding-top: 15px;
-  }
   nav .logo {
-    -ms-flex-preferred-size: 47%;
-        flex-basis: 47%;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -440,8 +397,8 @@ svg.down-angle {
             justify-content: flex-start;
   }
   nav label {
-    -ms-flex-preferred-size: 47%;
-        flex-basis: 47%;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -454,32 +411,21 @@ svg.down-angle {
   }
   ul.mobile-menu {
     padding-top: 25px;
-    width: 100%;
-  }
-  ul.mobile-menu li {
-    background-color: #0000ec;
-    color: #fff;
-    width: 100%;
-    padding: 15px 0 15px 30px;
-    text-align: left;
-  }
-  #sec-dedondevenimos {
-    height: auto;
   }
   #sec-dedondevenimos .container figure img {
     -webkit-transform: translateY(-75px);
             transform: translateY(-75px);
   }
-  #sec-dedondevenimos .container div {
+  #sec-dedondevenimos .container article {
     margin-top: -50px;
   }
-  .wrap-galeria {
+  #sec-invitados .wrap-section {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .wrap-galeria img {
+  #sec-invitados .wrap-section img {
     width: 100%;
   }
   #sec-temas .container .wrap-icons {
@@ -487,73 +433,16 @@ svg.down-angle {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: auto;
   }
   #sec-temas .container .wrap-icons figure {
     padding: 0 0 45px 0;
-    margin: 0 auto;
-  }
-  #sec-ultimasnovedades {
-    padding: 70px 15px 45px 15px;
-  }
-  footer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  footer div:first-of-type {
-    margin-bottom: 30px;
-  }
-  footer #redessociales {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    width: 100%;
-  }
-  footer #redessociales i {
-    padding: 0;
-  }
-}
-
-/* Tablet */
-@media all and (min-width: 764px) and (max-width: 1365px) {
-  #sec-episodios {
-    padding: 150px 0;
-  }
-  #sec-ultimasnovedades {
-    padding: 120px 15px 45px 15px;
-  }
-  #sec-dedondevenimos .container figure img {
-    -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
   }
 }
 
 /* Desktop */
-@media all and (min-width: 1024px) {
-  #toggle-mobile-menu:checked ~ ul.mobile-menu {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
+@media all and (min-width: 480px) {
   .mobile-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    display: block;
     padding-top: 0;
   }
   .mobile-menu li {
@@ -675,8 +564,5 @@ svg.down-angle {
   button {
     margin-top: 50px;
   }
-  #sec-dedondevenimos div {
-    padding-top: 10%;
-  }
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style (Conflicted copy from DESKTOP-C9T3LB5 on 2020-09-19).css.map */
