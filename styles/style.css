@@ -471,6 +471,9 @@ svg.down-angle {
     font-size: 2.25em;
     padding: 10px 0 15px;
   }
+  h2 {
+    padding: 7px 0 15px 0;
+  }
   h3 {
     margin-bottom: 15px;
   }
@@ -544,6 +547,11 @@ svg.down-angle {
     padding: 15px 0 15px 30px;
     text-align: left;
   }
+  #sec-invitados {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
   #sec-dedondevenimos {
     height: auto;
   }
@@ -576,6 +584,9 @@ svg.down-angle {
   }
   #sec-ultimasnovedades {
     padding: 70px 15px 45px 15px;
+  }
+  #sec-ultimasnovedades h2 {
+    padding: 15px 0 40px 0;
   }
   footer {
     -webkit-box-orient: vertical;
