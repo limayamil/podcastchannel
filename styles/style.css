@@ -68,7 +68,7 @@ a:active {
 }
 
 /* Elementos */
-button {
+.button {
   font-family: "IBM Plex Mono", monospace;
   font-size: 1em;
   font-weight: 500;
@@ -212,15 +212,14 @@ nav ul {
   color: #0000ec;
 }
 
-button {
+.button {
   background-color: #00f3bb;
   text-transform: uppercase;
   border: none;
-  width: 225px;
-  height: 55px;
+  padding: 20px 60px;
 }
 
-button:hover {
+.button:hover {
   background-image: -webkit-gradient(linear, right top, left top, from(#00f0b8), to(#0000ff));
   background-image: linear-gradient(to left, #00f0b8, #0000ff);
   color: #fff;
@@ -254,6 +253,7 @@ button:hover {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  z-index: 1;
 }
 
 #sec-dedondevenimos .container figure {
@@ -274,8 +274,8 @@ button:hover {
 
 #sec-dedondevenimos .container figure img {
   width: 75%;
-  -webkit-transform: translateY(-170px);
-          transform: translateY(-170px);
+  -webkit-transform: translateY(-145px);
+          transform: translateY(-145px);
 }
 
 #sec-invitados {
@@ -418,7 +418,7 @@ button:hover {
           flex-direction: column;
 }
 
-#sec-ultimasnovedades button {
+#sec-ultimasnovedades .button {
   margin-top: 0;
 }
 
@@ -477,9 +477,33 @@ svg.down-angle {
   h3 {
     margin-bottom: 15px;
   }
-  button {
-    width: 100%;
+  .row {
+    text-align: center;
+  }
+  .button {
+    /* width: 100%; */
     margin: 30px 0 15px 0;
+  }
+  #sec-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  #sec-header a {
+    text-align: center;
   }
   #sec-episodios {
     padding: 70px 0 100px 0;
@@ -585,6 +609,12 @@ svg.down-angle {
   #sec-ultimasnovedades {
     padding: 70px 15px 45px 15px;
   }
+  #sec-ultimasnovedades .container {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    text-align: center;
+  }
   #sec-ultimasnovedades h2 {
     padding: 15px 0 40px 0;
   }
@@ -659,6 +689,14 @@ svg.down-angle {
   #hamburger-icon {
     display: none;
   }
+  #sec-header {
+    margin-top: 100px;
+    width: 70vw;
+    z-index: 1;
+  }
+  #sec-header p {
+    margin-bottom: 50px;
+  }
   nav {
     width: 90vw;
     margin: 0 auto;
@@ -684,10 +722,6 @@ svg.down-angle {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-  header section {
-    margin-top: 100px;
-    width: 70vw;
   }
   .container {
     display: -webkit-box;
@@ -764,7 +798,7 @@ svg.down-angle {
   p {
     max-width: 620px;
   }
-  button {
+  .button {
     margin-top: 50px;
   }
   #sec-dedondevenimos div {

@@ -85,7 +85,7 @@ a {
 
 /* Elementos */
 
-button {
+.button {
   font-family: $fuente-cuerpo;
   font-size: 1em;
   font-weight: 500;
@@ -196,12 +196,11 @@ nav ul {
   color: #0000ec;
 }
 
-button {
+.button {
   background-color: #00f3bb;
   text-transform: uppercase;
   border: none;
-  width: 225px;
-  height: 55px;
+  padding: 20px 60px;
 
   &:hover {
     background-image: linear-gradient(to left, #00f0b8, #0000ff);
@@ -221,13 +220,14 @@ button {
 
   .container {
     align-items: flex-start;
+    z-index: 1;
 
     figure {
       @include flex-centrado(row);
 
       img {
         width: 75%;
-        transform: translateY(-170px);
+        transform: translateY(-145px);
       }
     }
   }
@@ -294,7 +294,7 @@ button {
     @include flex-centrado(column);
   }
 
-  button {
+  .button {
     margin-top: 0;
   }
 }
@@ -346,9 +346,22 @@ svg.down-angle {
     margin-bottom: 15px;
   }
 
-  button {
-    width: 100%;
+  .row {
+    text-align: center;
+  }
+
+  .button {
+    /* width: 100%; */
     margin: 30px 0 15px 0;
+  }
+
+  #sec-header {
+    @include flex-centrado(column);
+    align-items: stretch;
+
+    a {
+      text-align: center;
+    }
   }
 
   #sec-episodios {
@@ -454,6 +467,11 @@ svg.down-angle {
   #sec-ultimasnovedades {
     padding: 70px 15px 45px 15px;
 
+    .container {
+      align-items: stretch;
+      text-align: center;
+    }
+
     h2 {
       padding: 15px 0 40px 0;
     }
@@ -520,6 +538,16 @@ svg.down-angle {
     display: none;
   }
 
+  #sec-header {
+    margin-top: 100px;
+    width: 70vw;
+    z-index: 1;
+
+    p {
+      margin-bottom: 50px;
+    }
+  }
+
   nav {
     width: 90vw;
     margin: 0 auto;
@@ -530,11 +558,6 @@ svg.down-angle {
 
   header {
     @include flex-centrado(column);
-
-    section {
-      margin-top: 100px;
-      width: 70vw;
-    }
   }
 
   .container {
@@ -579,7 +602,7 @@ svg.down-angle {
     max-width: 620px;
   }
 
-  button {
+  .button {
     margin-top: 50px;
   }
 
